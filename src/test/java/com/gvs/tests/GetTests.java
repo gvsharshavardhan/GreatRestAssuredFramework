@@ -1,12 +1,10 @@
 package com.gvs.tests;
 
-import com.github.javafaker.Faker;
 import com.gvs.requestBuilders.RequestBuilder;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.*;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetTests {
     @Test
@@ -21,11 +19,13 @@ public class GetTests {
     }
 
     @Test
-    public void getEmployee(){
+    public void getEmployee() {
         Response response = RequestBuilder.getRequestBuilder()
-                .pathParam("id",1)
+                .pathParam("id", 1)
                 .get("/employees/{id}");
         response.prettyPrint();
 
     }
+
+
 }

@@ -4,21 +4,22 @@ import com.github.javafaker.Faker;
 
 public final class FakerUtil {
 
-    private FakerUtil(){}
+    private FakerUtil() {
+    }
 
     static int getNumberBetween(int min, int max) {
         return new Faker().number().numberBetween(min, max);
     }
 
-    static String getFirstName(){
+    static String getFirstName() {
         return new Faker().name().firstName();
     }
 
-    static String getLastName(){
+    static String getLastName() {
         return new Faker().name().lastName();
     }
 
-    static String getEmail(){
+    static String getEmail() {
         return new Faker().internet().emailAddress();
     }
 }
