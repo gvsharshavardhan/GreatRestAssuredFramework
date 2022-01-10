@@ -24,8 +24,5 @@ public class GetTests {
                 .pathParam("id", 1)
                 .get("/employees/{id}");
         response.prettyPrint();
-
     }
-
-
 }

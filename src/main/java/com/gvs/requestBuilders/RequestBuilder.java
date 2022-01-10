@@ -1,5 +1,6 @@
 package com.gvs.requestBuilders;
 
+import com.gvs.util.PropertyUtil;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
@@ -12,16 +13,13 @@ public final class RequestBuilder {
 
     public static RequestSpecification getRequestBuilder() {
         return given()
-                .baseUri("http://localhost:3000")
+                .baseUri(PropertyUtil.getValue("baseurl"))
                 .log()
                 .all();
     }
 
     public static RequestSpecification postRequestBuilder() {
-        return given()
-                .baseUri("http://localhost:3000")
-                .log()
-                .all()
+        return getRequestBuilder()
                 .contentType(ContentType.JSON);
     }
 }

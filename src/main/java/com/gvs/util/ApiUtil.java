@@ -14,11 +14,11 @@ public final class ApiUtil {
 
     @SneakyThrows
     public static String readJsonFromAFileAsGetAsAString(String path) {
-        return new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + path)));
+        return new String(Files.readAllBytes(Paths.get(path)));
     }
 
     @SneakyThrows
-    public static void writeJsonResponseIntoAFile(Response response, Path path) {
-        Files.write(path, response.asByteArray());
+    public static void writeJsonResponseIntoAFile(Response response, String path) {
+        Files.write(Paths.get(path), response.asByteArray());
     }
 }
